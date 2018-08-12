@@ -1,9 +1,10 @@
 import unittest
 
+
 def rp(x, y, result=0):
-    if y==1:
+    if y == 1:
         return result+x
-    if y%2:
+    if y % 2:
         return rp(x*2, y/2, result+x)
     return rp(x*2, y/2, result)
 
