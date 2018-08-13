@@ -1,5 +1,6 @@
 import unittest
 
+
 def maximumSubArray(array):
     left = None
     right = None
@@ -25,22 +26,27 @@ def maximumSubArray(array):
                 left = None
                 right = None
                 current_sum = 0
-    return (max_left, max_right, max_sum)        
+    return (max_left, max_right, max_sum)
+
 
 def maximumSubArrayII(array):
     pass
 
+
 class MyTest(unittest.TestCase):
-  def test_maximumSubArray(self):
-    tests = [
-        {'args': [13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7], 'exp': (7,10,43)},
-        {'args': [-22,-15,-4,-7], 'exp': (None,None,0)},
-        {'args': [-22,-15,4,-7], 'exp': (2,2,4)},
-        {'args': [22,15,4,-7], 'exp': (0,2,41)},
-        {'args': [1, -2, 3, 10, -4, 7, 2, -5], 'exp': (2, 6, 18)},
-        ]
-    for t in tests:
-      self.assertEqual(t['exp'], maximumSubArray(t['args']))
+
+    def test_maximumSubArray(self):
+        tests = [
+            {'args': [
+                13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4,
+                7], 'exp': (7, 10, 43)},
+            {'args': [-22, -15, -4, -7], 'exp': (None, None, 0)},
+            {'args': [-22, -15, 4, -7], 'exp': (2, 2, 4)},
+            {'args': [22, 15, 4, -7], 'exp': (0, 2, 41)},
+            {'args': [1, -2, 3, 10, -4, 7, 2, -5], 'exp': (2, 6, 18)},
+            ]
+        for t in tests:
+            self.assertEqual(t['exp'], maximumSubArray(t['args']))
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

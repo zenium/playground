@@ -1,20 +1,21 @@
 import unittest
 
+
 def bracketStringSplit(string):
     stack = []
     left = {
-        '[': 1, 
-        '(': 2, 
+        '[': 1,
+        '(': 2,
         '{': 3,
     }
     right = {
-        ']': 1, 
-        ')': 2, 
+        ']': 1,
+        ')': 2,
         '}': 3,
     }
     for i in range(len(string)):
         if string[i] in left.keys():
-            stack+=string[i]
+            stack += string[i]
         if string[i] in right.keys():
             try:
                 last = stack.pop()
@@ -25,13 +26,12 @@ def bracketStringSplit(string):
     if len(stack) > 0:
         return False
     return True
-            
 
 
 class simpletest(unittest.TestCase):
     def setUp(self):
         pass
-    
+
     def testisNetblock(self):
         tests = [
             {
@@ -53,6 +53,6 @@ class simpletest(unittest.TestCase):
             ]
         for t in tests:
             self.assertEqual(bracketStringSplit(t['i']), t['r'])
-    
+
 if __name__ == '__main__':
     unittest.main()

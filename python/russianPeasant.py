@@ -12,7 +12,7 @@ def rp(x, y, result=0):
 class simpletest(unittest.TestCase):
     def setUp(self):
         pass
-    
+
     def testisNetblock(self):
         tests = [
             {
@@ -28,6 +28,6 @@ class simpletest(unittest.TestCase):
             ]
         for t in tests:
             self.assertEqual(rp(t['x'], t['y']), t['r'])
-    
+
 if __name__ == '__main__':
     unittest.main()
