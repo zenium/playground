@@ -10,8 +10,8 @@ pipeline {
                 script {
                     def branches = [:]
                     for (node in params.NODES.tokenize(',')) {
-						build job: 'freestyle', parameters: [
-                            string(name: 'param1', value:'test_param'),
+						build job: 'basejob', parameters: [
+                            // string(name: 'param1', value:'test_param'),
                             string(name: 'dummy', value: "${index}")]
                     }
                     parallel branches
