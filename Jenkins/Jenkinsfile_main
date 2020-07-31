@@ -12,7 +12,7 @@ pipeline {
                     for (node in params.NODES.tokenize(',')) {
 						build job: 'basejob', parameters: [
                             // string(name: 'param1', value:'test_param'),
-                            string(name: 'dummy', value: "${index}")]
+                            string(name: 'dummy', value: "${node}")]
                     }
                     parallel branches
                 }
