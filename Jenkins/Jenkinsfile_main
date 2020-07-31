@@ -1,0 +1,22 @@
+pipeline {
+	agent none
+	parameters {
+		string(name: 'NODES', defaultValue: '1,2,3')
+	}
+    stages {
+        stage('parallel stage') {
+        	failFast true
+            steps {
+                script {
+                    def branches = [:]
+                    for (node in params.NODES.tokenize(',')) {
+						build job: 'freestyle', parameters: [
+                            string(name: 'param1', value:'test_param'),
+                            string(name: 'dummy', value: "${index}")]
+                    }
+                    parallel branches
+                }
+            }
+        }
+    }
+}
