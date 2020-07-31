@@ -7,7 +7,7 @@ def biSearch(target, want):
     i = len(target)
     p = 0
     while i > 0:
-        print target[p:(p+i)], i/2, p
+        print(target[p:(p+i)], i/2, p)
         j = i
         i = i/2
         j = j-i
@@ -34,9 +34,10 @@ class simpletest(unittest.TestCase):
                 'w': 7,
                 'r': 6,
             },
-            ]
+        ]
         for t in tests:
             self.assertEqual(biSearch(t['t'], t['w']), t['r'])
+
 
 if __name__ == '__main__':
     unittest.main()

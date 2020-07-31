@@ -50,9 +50,10 @@ class simpletest(unittest.TestCase):
                 'i': '()()(',
                 'r': False,
             },
-            ]
+        ]
         for t in tests:
             self.assertEqual(bracketStringSplit(t['i']), t['r'])
+
 
 if __name__ == '__main__':
     unittest.main()

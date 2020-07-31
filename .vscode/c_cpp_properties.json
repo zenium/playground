@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder"
+            ],
+            "defines":[
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
